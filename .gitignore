@@ -1,0 +1,5 @@
+
+dist/
+*.pyc
+MANIFEST
+.DS_STORE
