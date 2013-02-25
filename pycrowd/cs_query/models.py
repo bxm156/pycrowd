@@ -4,6 +4,7 @@ Created on Nov 6, 2012
 @author: Bryan
 '''
 from django.db import models
+from django.conf import settings
 import pycrowd.cs_hits.models
 
 class Question(models.Model):
@@ -11,12 +12,26 @@ class Question(models.Model):
     question = models.CharField(max_length=30)
     image = models.URLField()
     
-    class Meta:
-        abstract = True
 
 class Answer(models.Model):
-    text = models.CharField(max_length=30)
-        
-class MultipleChoiceQuestion(Question):
-    choices = models.ManyToManyField(Answer)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    question = models.ForeignKey(Question)
     
+    class Meta:
+        unique_together = ('user', 'question',)
+
+        
+class Choice(models.Model):
+    question = models.ForeignKey(Question)
+    text = models.CharField(max_length=30)
+
+
+class MultipleChoiceQuestion(Question):
+    correct_answer = models.ForeignKey(Choice)
+    
+class MultipleChoiceAnswer(Answer):
+    answer = models.ForeignKey(Choice)
+    
+
+class BooleanAnswer(Answer):
+    answer = models.BooleanField()  
