@@ -5,10 +5,10 @@ Created on Nov 6, 2012
 '''
 from django.db import models
 from django.conf import settings
-import pycrowd.cs_hits.models
+from pycrowd.cs_hits.models import HumanTask
 
 class Question(models.Model):
-    hit = models.ForeignKey(pycrowd.cs_hits.models.HumanTask)
+    hit = models.ForeignKey(HumanTask)
     question = models.CharField(max_length=30)
     image = models.URLField()
     
@@ -16,6 +16,7 @@ class Question(models.Model):
 class Answer(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     question = models.ForeignKey(Question)
+    hit = models.ForeignKey(HumanTask) # Reduce joins
     
     class Meta:
         unique_together = ('user', 'question',)
