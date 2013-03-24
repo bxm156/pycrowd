@@ -3,3 +3,4 @@ dist/
 *.pyc
 MANIFEST
 .DS_STORE
+_build/
