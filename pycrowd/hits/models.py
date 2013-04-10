@@ -5,8 +5,8 @@ Created on Nov 7, 2012
 '''
 from django.db import models
 
-import pycrowd.cs_query.models
-from pycrowd.cs_jobs.models import CrowdsourceJob
+import pycrowd.query.models
+from pycrowd.jobs.models import CrowdsourceJob
 
 class HumanTaskManager(models.Manager):
     pass
@@ -22,8 +22,8 @@ class HumanTask(models.Model):
         unique_together = (("id", "job"),)
     
     def getQuestion(self):
-        return pycrowd.cs_query.models.Question.objects.get(hit=id)
+        return pycrowd.query.models.Question.objects.get(hit=id)
     
     def getResponseCount(self):
-        return pycrowd.cs_query.models.Answer.objects.filter(hit=id).count()
+        return pycrowd.query.models.Answer.objects.filter(hit=id).count()
         

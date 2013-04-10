@@ -4,7 +4,7 @@ Created on Nov 6, 2012
 @author: Bryan
 '''
 import pycrowd.settings as settings
-from pycrowd.cs_jobs.plan import JobPlan
+from pycrowd.jobs.plan import JobPlan
 from django.db.models import get_model
 
 class PredictionModel():

@@ -1,6 +1,6 @@
 
 from django import forms
-from pycrowd.cs_jobs.models import CrowdsourceJob
+from pycrowd.jobs.models import CrowdsourceJob
 
 class JobForm(forms.ModelForm):
     

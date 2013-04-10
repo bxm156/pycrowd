@@ -5,7 +5,7 @@ Created on Nov 6, 2012
 '''
 from django.db import models
 from django.conf import settings
-from pycrowd.cs_hits.models import HumanTask
+from pycrowd.hits.models import HumanTask
 
 class Question(models.Model):
     hit = models.ForeignKey(HumanTask)

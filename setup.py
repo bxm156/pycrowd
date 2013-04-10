@@ -6,8 +6,8 @@ setup(name='pycrowd',
       author='Bryan Marty',
       author_email='bxm156@case.edu',
       url='http://pycrowd.bryanmarty.com',
-      packages=['pycrowd','pycrowd.cs_evaluator','pycrowd.cs_executor','pycrowd.cs_hits','pycrowd.cs_jobs',
-          'pycrowd.cs_prediction','pycrowd.cs_query','pycrowd.cs_workers'],
+      packages=['pycrowd','pycrowd.evaluator','pycrowd.executor','pycrowd.hits','pycrowd.jobs',
+          'pycrowd.prediction','pycrowd.query','pycrowd.workers'],
       classifiers=[
           #Status
           'Development Status :: 2 - Pre-Alpha',

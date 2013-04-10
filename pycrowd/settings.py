@@ -5,4 +5,4 @@ Created on Nov 6, 2012
 '''
 
 #Profile for users
-WORKER_PROFILE = 'cs_workers.WorkerProfile'
+WORKER_PROFILE = 'workers.WorkerProfile'
