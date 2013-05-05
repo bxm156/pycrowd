@@ -7,7 +7,7 @@ from django.db import models
 from django.conf import settings
 
 class WorkerProfile(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, db_index=True, editable=False)
     trust_level = models.PositiveSmallIntegerField(default=5)
     
     
