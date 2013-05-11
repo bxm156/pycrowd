@@ -8,6 +8,6 @@ from django.conf import settings
 
 class WorkerProfile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, db_index=True, editable=False)
-    trust_level = models.PositiveSmallIntegerField(default=5)
+    trust_level = models.PositiveSmallIntegerField(default=5, editable=False)
     
     
